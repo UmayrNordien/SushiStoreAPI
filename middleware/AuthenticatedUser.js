@@ -5,7 +5,7 @@ const {sign, verify} = require('jsonwebtoken');
 function createToken(user) {
     return sign({
         emailAdd: user.emailAdd,
-        userPass: user.usePass
+        userPass: user.userPass
     },
     process.env.SECRET_KEY,
     {

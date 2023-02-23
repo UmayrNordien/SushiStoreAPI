@@ -1,5 +1,3 @@
-//controller
-//=======
 const express = require('express');
 // path
 const path = require('path');
@@ -13,7 +11,7 @@ const {User, Product} = require('../model');
 const user = new User();
 // Product instance
 const product = new Product();
-// ^/$|/SushiStore
+// ^/$|/sushistore
 route.get('^/$|/sushistore', (req, res)=>{
     res.status(200).sendFile(path.join(__dirname, '../view/index.html'));
 })
