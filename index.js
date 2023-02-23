@@ -9,14 +9,13 @@ const port = parseInt(process.env.PORT) || 6969;
 const app = express();
 // Middleware
 const {errorHandling} = require('./middleware/ErrorHandling');
-
 //
 const cookieParser = require('cookie-parser');
 
 app.use(
     cors(),
     cookieParser(),
-    express.json(),
+    express.json,
     express.urlencoded({extended: false})
 );
 
@@ -34,6 +33,8 @@ app.use((req, res, next)=> {
 // Server is running
 app.listen(port, ()=> {
     console.log(`Server is running on port 6969`)
+    console.log(`✔️`)
+    console.log(`Ctrl + C to exit server`)
 });
 // Handling all errors
 app.use(errorHandling);
